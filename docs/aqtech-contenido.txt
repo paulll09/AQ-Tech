@@ -1,0 +1,263 @@
+================================================================
+AQ TECH — CONTENIDO COMPLETO DE LA WEB
+================================================================
+
+
+----------------------------------------------------------------
+EMPRESA
+----------------------------------------------------------------
+Nombre: AQ Tech
+Tipo: Estudio de desarrollo de software
+Descripción: Especializado en soluciones digitales para emprendedores y Pymes.
+Propuesta de valor: Desarrollo a medida, trato directo, sin intermediarios, sin costos ocultos.
+
+
+----------------------------------------------------------------
+CONTACTO
+----------------------------------------------------------------
+Email: contacto@aqtech.com.ar
+Teléfono: +54 9 3716 40-0743
+WhatsApp: https://wa.me/5493716400743
+Instagram: @aqtechoficial
+URL Instagram: https://www.instagram.com/aqtechoficial
+
+
+----------------------------------------------------------------
+HERO
+----------------------------------------------------------------
+Badge: "Estudio de Software · Disponible"
+Título línea 1: "De la idea al sistema."
+Título línea 2 (gradiente): "Sin rodeos, sin agencias."
+Descripción: "Creamos la solución digital que tu negocio necesita. Hablás directo con nosotros, sin intermediarios ni costos de más."
+
+Diferenciadores (lista):
+- Precio accesible, sin sorpresas
+- Trato directo con quien construye
+- Entrega en tiempo real
+
+Botón principal: "Iniciar Proyecto"
+Botón secundario: "Ver proyectos"
+
+Estadísticas:
+- 50+ Proyectos
+- 5+ Años
+- 100% A medida
+
+
+----------------------------------------------------------------
+SERVICIOS
+----------------------------------------------------------------
+Título sección: "Soluciones que hacen crecer tu negocio."
+Descripción: "Desde sitios web institucionales hasta sistemas complejos a medida. Todo construido para funcionar desde el primer día."
+
+01 — Sitios Web & Landing Pages
+Tu carta de presentación digital. Webs modernas, rápidas y optimizadas que transmiten confianza y convierten visitantes en clientes.
+
+02 — Tiendas Online (E-Commerce)
+Vende tus productos 24/7. Catálogos autoadministrables y experiencias de compra optimizadas para cerrar ventas.
+
+03 — Sistemas de Gestión a Medida
+Software que se adapta a tu proceso, no al revés. Dejá de usar Excel y pasate a una solución propia que automatiza tu operación.
+
+04 — Integraciones & Automatizaciones
+Conectamos las herramientas que ya usás para que trabajen juntas solas. Menos trabajo manual, más tiempo para vos.
+
+
+----------------------------------------------------------------
+SOBRE NOSOTROS
+----------------------------------------------------------------
+Título: "Más que un proveedor, tu socio tecnológico."
+Descripción: "En AQ Tech somos un estudio de desarrollo de software especializado en crear soluciones digitales para emprendedores y Pymes. A diferencia de las grandes agencias, ofrecemos trato directo y nos aseguramos de entender tu negocio en profundidad — sin intermediarios, sin costos ocultos y con foco total en resultados."
+CTA: "Hablemos de tu proyecto"
+
+Valores:
+
+1. Atención Personalizada
+Trabajamos con pocos clientes a la vez para dedicarle a tu proyecto el tiempo y el detalle que se merece.
+
+2. Calidad Profesional
+Usamos las mismas tecnologías que las grandes empresas del sector, adaptadas a tu presupuesto y tiempos reales.
+
+3. Enfoque en Resultados
+No entregamos sitios bonitos sin propósito. Cada proyecto tiene un objetivo de negocio claro desde el día uno.
+
+
+----------------------------------------------------------------
+POR QUÉ ELEGIRNOS
+----------------------------------------------------------------
+Título: "¿Por qué elegir AQ Tech?"
+Subtítulo: "Tres cosas que nos diferencian de cualquier otra opción."
+
+1. Comunicación directa
+Hablás directo con quien construye tu proyecto. Sin intermediarios, sin demoras, sin que tu mensaje se pierda en una cadena de mails.
+CTA: "Hablemos"
+
+2. Precio accesible
+Pagás por lo que necesitás, sin costos extras ni sorpresas. Sin estructura de agencia — el precio es justo porque trabajamos directo.
+CTA: "Ver opciones"
+
+3. 100% a medida
+Nada genérico, nada de plantillas. Cada proyecto se construye según lo que tu negocio necesita.
+CTA: "Conocer más"
+
+4. Tiempos reales
+Te decimos cuánto tarda y lo cumplimos. Sin estimaciones infladas ni plazos que se estiran.
+CTA: "Iniciar proyecto"
+
+5. Pensado para crecer
+Tu solución se adapta cuando tu negocio escala. Construimos con eso en mente desde el día uno.
+CTA: "Ver portafolio"
+
+
+----------------------------------------------------------------
+PORTAFOLIO / CASOS DE USO
+----------------------------------------------------------------
+Título: "Proyectos reales, en producción."
+Subtítulo: "No vendemos tecnología. Resolvemos problemas concretos de negocios reales."
+
+— Bar Bulgaria —
+Categoría: Sistema Gastronómico
+URL: https://www.bulgariabar.com
+Descripción: Menú digital interactivo con carrito, pedidos vía WhatsApp, control horario automático, ubicación GPS y panel de administración en tiempo real.
+Funcionalidades:
+- Carta digital interactiva
+- Pedidos por WhatsApp
+- Panel admin en tiempo real
+- Control horario automático
+- Compartir ubicación GPS
+
+— Burgers Boss —
+Categoría: Sistema Gastronómico
+URL: https://burgersboss.com.ar
+Descripción: Menú digital y panel de administración para hamburguesería. Gestión de pedidos en tiempo real, análisis de ventas, control de gastos y cierre de caja diario.
+Funcionalidades:
+- Menú digital con carrito
+- Análisis de ventas
+- Control de gastos
+- Cierre de caja diario
+- Pedidos por WhatsApp
+
+— Club del Bosque Pádel —
+Categoría: Sistema de Reservas
+URL: https://clubdelbosquepadel.com
+Descripción: Sistema integral de reservas de canchas con pagos online vía Mercado Pago, panel administrativo completo, calendario en tiempo real y gestión de socios.
+Funcionalidades:
+- Reservas online 24/7
+- Pagos con Mercado Pago
+- Panel administrativo
+- Calendario en tiempo real
+- Gestión de socios
+
+
+----------------------------------------------------------------
+PROCESO DE TRABAJO
+----------------------------------------------------------------
+Título: "Cómo trabajamos"
+Subtítulo: "Un proceso claro y simple, sin tecnicismos."
+
+01 — Análisis
+Nos reunimos para entender qué necesitás, cómo funciona tu negocio y qué querés lograr. Sin tecnicismos.
+
+02 — Diseño
+Mostramos cómo va a verse y funcionar antes de construir nada. Así evitamos sorpresas costosas.
+
+03 — Desarrollo
+Construimos tu solución con entregas parciales para que puedas ver el avance en tiempo real y dar feedback.
+
+04 — Lanzamiento
+Publicamos tu proyecto, hacemos las pruebas finales y te acompañamos en los primeros días.
+
+
+----------------------------------------------------------------
+ESTADÍSTICAS / MÉTRICAS
+----------------------------------------------------------------
+- 50+ Proyectos completados
+- 1 a 1 Trato directo
+- 100% Clientes satisfechos
+- 24h Tiempo de respuesta
+
+Marquee (texto rotativo):
+Sin Plantillas · Carga Ultrarrápida · Pagos con Mercado Pago · Atención Personalizada · Diseños Exclusivos · Soporte Técnico Directo
+
+
+----------------------------------------------------------------
+FORMULARIO DE CONTACTO
+----------------------------------------------------------------
+Estado: "DISPONIBLE"
+Título: "¿Tenés una idea? Hagámosla realidad."
+Descripción: "Completá el formulario y te respondemos en menos de 24 horas. Sin compromisos."
+
+Campos:
+- Nombre completo (requerido)
+- Email (requerido)
+- WhatsApp (opcional)
+- Tipo de proyecto (requerido) — opciones:
+    · Sitio Web / Landing Page
+    · Tienda Online (E-Commerce)
+    · Sistema de Gestión a Medida
+    · Integración / Automatización
+    · Sistema Gastronómico
+    · Otro
+- Mensaje / descripción del proyecto (requerido)
+
+Botón envío: "Enviar consulta"
+Nota legal: "Tu información es privada y no se comparte con terceros."
+
+Mensaje de éxito: "¡Mensaje enviado! Recibimos tu consulta. Te respondemos en menos de 24 horas."
+Mensaje de error: "Hubo un error al enviar. Intentá de nuevo o escribinos por WhatsApp."
+
+Sidebar contacto directo:
+- "¿Preferís hablar directo?" → botón "Hablar por WhatsApp"
+- Email: contacto@aqtech.com.ar
+- Teléfono: +54 9 3716 40-0743
+- Nota: "Respondemos todas las consultas en menos de 24 horas hábiles. Primera reunión sin costo."
+
+
+----------------------------------------------------------------
+CTA PRE-FOOTER
+----------------------------------------------------------------
+Etiqueta: "SIGUIENTE PASO"
+Título: "Construyamos algo increíble juntos."
+Descripción: "Primera consulta sin costo. Respuesta en menos de 24 horas."
+Botón: "Iniciar mi proyecto"
+
+
+----------------------------------------------------------------
+FOOTER
+----------------------------------------------------------------
+Tagline: "Estudio de desarrollo de software especializado en soluciones digitales para emprendedores y Pymes."
+
+Columna Servicios:
+- Sitios Web & Landing Pages
+- Tiendas Online (E-Commerce)
+- Sistemas de Gestión a Medida
+- Integraciones & Automatizaciones
+
+Columna Navegación:
+- Inicio
+- Servicios
+- Nosotros
+- Proceso
+- Portafolio
+- Contacto
+
+Columna Contacto:
+- +54 9 3716 40-0743
+- contacto@aqtech.com.ar
+
+Copyright: "© [año] AQ Tech. Todos los derechos reservados."
+Crédito: "Diseñado y desarrollado por AQ Tech"
+
+
+----------------------------------------------------------------
+NAVEGACIÓN (NAVBAR)
+----------------------------------------------------------------
+Logo: AQ Tech
+Links:
+- Servicios → #servicios
+- Portafolio → #portfolio
+- Nosotros → #about
+- Contacto → #contact
+Botón CTA: "Iniciar Proyecto"
+
+================================================================
