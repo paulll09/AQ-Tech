@@ -1,6 +1,6 @@
 # Deploy
 
-The site is static. Hostinger serves `public_html`; Cloudflare sits in front as proxy and cache.
+The site is static. Hostinger serves `public_html`; Cloudflare sits in front as a proxy and does not cache the HTML.
 
 ## Steps
 
@@ -13,8 +13,7 @@ The site is static. Hostinger serves `public_html`; Cloudflare sits in front as 
    ```
 3. **Upload the contents of `dist/`, not the folder itself.** `public_html/index.html` must exist after the upload, not `public_html/dist/index.html`.
 4. **Replace `index.html`.** Files in `_astro/` have hashed names, so new ones never collide with old ones. Leftover old files are harmless and can be removed later.
-5. **Purge the Cloudflare cache.** Dashboard, Caching, Configuration, Purge Everything. If you skip this, visitors can keep getting the old `index.html`.
-6. **Check the live site.** Open https://aqtech.com.ar in a private window and send a test message through the contact form.
+5. **Check the live site.** Open https://aqtech.com.ar in a private window and send a test message through the contact form.
 
 ## Rules
 
