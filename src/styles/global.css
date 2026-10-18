@@ -1,4 +1,6 @@
 @import "tailwindcss";
+/* Markdown docs are not markup; scanning them adds stray utility classes. */
+@source not "../../docs";
 
 @theme {
   --color-bg: #020B18;
