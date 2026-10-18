@@ -1,5 +1,7 @@
 # Product screenshots
 
+Place the files in `public/portfolio/` (create the folder).
+
 `src/components/Portfolio.astro` expects these three files. Each card renders
 without its screenshot when the file is missing, so nothing breaks while they
 are pending — the card simply goes back to being text only.

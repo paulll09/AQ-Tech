@@ -1,5 +1,7 @@
 # Team photos
 
+Place the photos in `public/team/` (create the folder).
+
 `src/components/About.astro` has the markup and styles for a team block, but its
 `team` array ships **empty** and therefore renders nothing. The names were not in
 `aqtech-contenido.txt`, and inventing people on a page whose whole differentiator
