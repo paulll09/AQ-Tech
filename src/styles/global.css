@@ -1,6 +1,7 @@
 @import "tailwindcss";
 /* Markdown docs are not markup; scanning them adds stray utility classes. */
 @source not "../../docs";
+@source not "../../README.md";
 
 @theme {
   --color-bg: #020B18;
