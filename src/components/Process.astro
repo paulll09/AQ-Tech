@@ -1,0 +1,142 @@
+---
+import Icon from "./Icon.astro";
+
+const steps = [
+  {
+    icon: "search",
+    title: "Análisis",
+    description: "Nos reunimos para entender qué necesitás, cómo funciona tu negocio y qué querés lograr. Sin tecnicismos.",
+  },
+  {
+    icon: "pen-tool",
+    title: "Diseño",
+    description: "Mostramos cómo va a verse y funcionar antes de construir nada. Así evitamos sorpresas costosas.",
+  },
+  {
+    icon: "code-2",
+    title: "Desarrollo",
+    description: "Construimos tu solución con entregas parciales para que puedas ver el avance en tiempo real y dar feedback.",
+  },
+  {
+    icon: "rocket",
+    title: "Lanzamiento",
+    description: "Publicamos tu proyecto, hacemos las pruebas finales y te acompañamos en los primeros días.",
+  },
+];
+---
+
+<section id="proceso" class="py-24 px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+
+    <div class="text-center max-w-2xl mx-auto mb-20 reveal">
+      <span class="text-xs font-bold tracking-widest text-[--color-cyan] uppercase mb-4 block">Proceso</span>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-black leading-tight mb-4">
+        Cómo <span class="gradient-text">trabajamos</span>
+      </h2>
+      <p class="text-[--color-muted] text-lg">Un proceso claro y simple, sin tecnicismos.</p>
+    </div>
+
+    <!-- Desktop: grid horizontal con línea superior -->
+    <div class="hidden md:block relative">
+      <div
+        class="absolute top-12 left-[calc(12.5%+2rem)] right-[calc(12.5%+2rem)] h-px"
+        style="background: linear-gradient(to right, transparent, var(--color-border), var(--color-blue), var(--color-cyan), var(--color-border), transparent);"
+      ></div>
+
+      <div class="grid grid-cols-4 gap-6">
+        {steps.map((step, i) => (
+          <div class="reveal flex flex-col items-center text-center" style={`transition-delay: ${i * 120}ms;`}>
+            <div
+              class="w-24 h-24 rounded-2xl flex items-center justify-center mb-6 relative z-10 border transition-all process-icon group"
+              style="background: rgba(10,22,40,0.65); border-color: rgba(255,255,255,0.07); border-top-color: rgba(255,255,255,0.12); box-shadow: 0 1px 0 0 rgba(255,255,255,0.05) inset, 0 2px 4px rgba(0,0,0,0.25), 0 8px 16px rgba(0,0,0,0.30), 0 20px 40px rgba(0,0,0,0.22);"
+            >
+              <div class="text-[--color-cyan] group-hover:scale-110 transition-transform">
+                <Icon name={step.icon} class="w-9 h-9" />
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">{step.title}</h3>
+            <p class="text-[--color-muted] text-sm leading-relaxed max-w-[200px]">{step.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Mobile: timeline vertical — ícono izquierda, texto derecha, línea en columna propia -->
+    <div class="md:hidden flex flex-col">
+      {steps.map((step, i) => (
+        <div class="reveal timeline-step" style={`transition-delay: ${i * 120}ms;`}>
+
+          <!-- Columna izquierda: ícono + línea conectora -->
+          <div class="timeline-left">
+            <div
+              class="timeline-icon border process-icon group"
+              style="background: rgba(10,22,40,0.65); border-color: rgba(255,255,255,0.07); border-top-color: rgba(255,255,255,0.12); box-shadow: 0 1px 0 0 rgba(255,255,255,0.05) inset, 0 2px 4px rgba(0,0,0,0.25), 0 8px 20px rgba(0,0,0,0.30);"
+            >
+              <div class="text-[--color-cyan]">
+                <Icon name={step.icon} class="w-6 h-6" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Columna derecha: texto -->
+          <div class="timeline-body">
+            <h3 class="text-lg font-bold text-white mb-1.5">{step.title}</h3>
+            <p class="text-[--color-muted] text-sm leading-relaxed">{step.description}</p>
+          </div>
+
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<style>
+  /* ── Desktop icon hover ── */
+  .process-icon {
+    transition: transform 0.25s cubic-bezier(0.22,1,0.36,1), box-shadow 0.25s, border-color 0.25s;
+  }
+  .process-icon:hover {
+    transform: translateY(-4px);
+    border-color: rgba(37,99,235,0.4) !important;
+    border-top-color: rgba(34,211,238,0.22) !important;
+    box-shadow:
+      0 1px 0 0 rgba(255,255,255,0.07) inset,
+      0 4px 8px rgba(0,0,0,0.28),
+      0 14px 28px rgba(0,0,0,0.32),
+      0 0 28px rgba(37,99,235,0.12) !important;
+  }
+
+  /* ── Mobile timeline ── */
+  .timeline-step {
+    display: grid;
+    grid-template-columns: 3.5rem 1fr;
+    gap: 0 1.25rem;
+    align-items: start;
+  }
+
+  .timeline-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .timeline-icon {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.875rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+.timeline-body {
+    padding-top: 0.5rem;
+    padding-bottom: 2rem;
+  }
+
+  .timeline-step:last-child .timeline-body {
+    padding-bottom: 0;
+  }
+</style>

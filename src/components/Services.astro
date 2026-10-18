@@ -1,0 +1,149 @@
+---
+import Icon from "./Icon.astro";
+
+const services = [
+  {
+    title: "Sitios Web & Landing Pages",
+    description: "Tu carta de presentación digital. Webs modernas, rápidas y optimizadas que transmiten confianza y convierten visitantes en clientes.",
+    icon: "monitor",
+  },
+  {
+    title: "Sistemas de Gestión",
+    description: "Software que se adapta a tu proceso. Dejá de usar Excel y pasate a una solución propia que automatiza tu operación.",
+    icon: "layout-dashboard",
+  },
+  {
+    title: "Tiendas Online",
+    description: "Vende tus productos 24/7. Catálogos autoadministrables y experiencias de compra optimizadas para cerrar ventas.",
+    icon: "shopping-cart",
+  },
+  {
+    title: "Integraciones & Automatizaciones",
+    description: "Conectamos las herramientas que ya usás para que trabajen juntas solas. Menos trabajo manual, más tiempo para vos.",
+    icon: "zap",
+  },
+];
+---
+
+<section id="servicios" class="py-24 px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+
+    <div class="text-center max-w-2xl mx-auto mb-14 reveal">
+      <span class="text-xs font-bold tracking-widest text-[--color-cyan] uppercase mb-4 block">Servicios</span>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-black leading-tight mb-4">
+        Soluciones que hacen<br />
+        <span class="gradient-text">crecer tu negocio.</span>
+      </h2>
+      <p class="text-[--color-muted] text-lg leading-relaxed">
+        Desde sitios web institucionales hasta sistemas complejos a medida.
+        Todo construido para funcionar desde el primer día.
+      </p>
+    </div>
+
+    <div class="services-grid">
+      {services.map((service, i) => (
+        <div class="service-card reveal" style={`transition-delay: ${i * 60}ms`}>
+          <div class="card-icon">
+            <Icon name={service.icon} class="w-7 h-7" />
+          </div>
+          <div>
+            <h3 class="card-title">{service.title}</h3>
+            <p class="card-desc">{service.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  @media (min-width: 768px) {
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* ── Card elevada ── */
+  .service-card {
+    position: relative;
+    border-radius: 1.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    background: var(--color-surface);
+    padding: 2rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+
+    /* Borde superior luminoso — simula luz cayendo desde arriba */
+    border-top-color: rgba(255, 255, 255, 0.12);
+
+    /* Sombras en capas: la combinación genera la ilusión de elevación */
+    box-shadow:
+      0 1px 0 0 rgba(255, 255, 255, 0.05) inset,   /* highlight interno superior */
+      0 2px 4px  rgba(0, 0, 0, 0.25),               /* sombra cercana */
+      0 8px 16px rgba(0, 0, 0, 0.30),               /* sombra media */
+      0 24px 48px rgba(0, 0, 0, 0.25),              /* sombra profunda */
+      0 0 0 1px rgba(0, 0, 0, 0.2);                 /* borde sutil inferior */
+
+    transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+                border-color 0.25s;
+  }
+
+  .service-card:hover {
+    transform: translateY(-6px);
+    border-top-color: rgba(34, 211, 238, 0.25);
+    border-color: rgba(37, 99, 235, 0.3);
+
+    box-shadow:
+      0 1px 0 0 rgba(255, 255, 255, 0.07) inset,
+      0 4px 8px   rgba(0, 0, 0, 0.30),
+      0 16px 32px rgba(0, 0, 0, 0.35),
+      0 40px 64px rgba(0, 0, 0, 0.25),
+      0 0 40px    rgba(37, 99, 235, 0.12);          /* glow azul al elevar */
+  }
+
+  /* ── Icon ── */
+  .card-icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 0.875rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--color-cyan);
+    background: rgba(34, 211, 238, 0.08);
+    border: 1px solid rgba(34, 211, 238, 0.15);
+    transition: box-shadow 0.25s;
+  }
+
+  .service-card:hover .card-icon {
+    box-shadow: 0 0 18px rgba(34, 211, 238, 0.18);
+  }
+
+  /* ── Text ── */
+  .card-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+  }
+
+  .card-desc {
+    font-size: 0.875rem;
+    color: var(--color-muted);
+    line-height: 1.7;
+  }
+
+  @media (max-width: 767px) {
+    .service-card { padding: 1.5rem; gap: 1.25rem; }
+    .card-icon { width: 3rem; height: 3rem; }
+  }
+</style>

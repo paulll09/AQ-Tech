@@ -1,0 +1,75 @@
+---
+const stats = [
+  { value: 1, suffix: "a1", label: "Trato directo" },
+  { value: 100, suffix: "%", label: "Clientes satisfechos" },
+  { value: 24, suffix: "h", label: "Tiempo de respuesta" },
+];
+---
+
+<section class="py-20 px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4">
+      {stats.map((stat, i) => (
+        <div
+          class="reveal-pop text-center"
+          style={`transition-delay: ${i * 100}ms;`}
+        >
+          <p class="text-4xl md:text-5xl font-black mb-2">
+            <span
+              class="counter gradient-text"
+              data-target={stat.value}
+              data-suffix={stat.suffix}
+            >
+              {stat.value}{stat.suffix}
+            </span>
+          </p>
+          <p class="text-sm text-[--color-muted] font-medium">{stat.label}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  const counters = document.querySelectorAll<HTMLElement>(".counter");
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function animateCounter(el: HTMLElement) {
+    const target = parseInt(el.dataset.target ?? "0", 10);
+    const suffix = el.dataset.suffix ?? "";
+
+    // Sin animación para usuarios con reducción de movimiento
+    if (reduced) {
+      el.textContent = target + suffix;
+      return;
+    }
+
+    const duration = 1600;
+    const start = performance.now();
+
+    function tick(now: number) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = Math.round(eased * target);
+      el.textContent = current + suffix;
+      if (progress < 1) requestAnimationFrame(tick);
+    }
+
+    requestAnimationFrame(tick);
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target as HTMLElement);
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
+
+  counters.forEach((counter) => observer.observe(counter));
+</script>

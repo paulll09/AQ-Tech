@@ -1,0 +1,205 @@
+---
+import CTAButton from "./ui/CTAButton.astro";
+---
+
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+
+  <!-- Aurora blobs -->
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+    <div class="aurora-blob aurora-blob-1"></div>
+    <div class="aurora-blob aurora-blob-2"></div>
+    <div class="aurora-blob aurora-blob-3"></div>
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-6 lg:px-8 pb-16 w-full flex flex-col items-center text-center">
+
+    <!-- Badge -->
+    <div
+      class="inline-flex items-center gap-2 text-xs font-bold px-3 py-1.5 rounded-full mb-8"
+      style="animation: hero-fade-up 0.5s ease 0s both; background: rgba(34,211,238,0.08); color: var(--color-cyan); border: 1px solid rgba(34,211,238,0.2);"
+    >
+      <span class="w-1.5 h-1.5 rounded-full bg-[--color-cyan] animate-pulse"></span>
+      Desarrollo de software a medida
+    </div>
+
+    <!-- Headline — typewriter -->
+    <h1 class="text-5xl md:text-6xl xl:text-7xl font-black leading-[1.05] tracking-tight mb-6 max-w-4xl min-h-[1em]">
+      <span id="hero-text"></span><span id="hero-gradient" class="gradient-text"></span><span id="hero-cursor" class="typewriter-cursor" aria-hidden="true">|</span>
+    </h1>
+
+    <!-- Description -->
+    <p
+      class="text-lg md:text-xl text-[--color-muted] leading-relaxed mb-8 max-w-xl"
+      style="animation: hero-fade-up 0.5s ease 1.8s both;"
+    >
+      Creamos la solución digital que tu negocio necesita.
+      Hablás directo con nosotros — sin intermediarios ni costos de más.
+    </p>
+
+    <!-- Checks -->
+    <ul
+      class="flex flex-col sm:flex-row items-center gap-4 sm:gap-8 mb-10"
+      style="animation: hero-fade-up 0.5s ease 2.1s both;"
+    >
+      {["Precio accesible, sin sorpresas", "Trato directo con quien construye", "Entrega en tiempo real"].map(item => (
+        <li class="flex items-center gap-2 text-sm text-[--color-muted]">
+          <span class="flex items-center justify-center w-5 h-5 rounded-full shrink-0"
+            style="background: rgba(34,211,238,0.15);">
+            <svg class="w-3 h-3 text-[--color-cyan]" viewBox="0 0 12 12" fill="none">
+              <path d="M2 6l2.5 2.5L10 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          {item}
+        </li>
+      ))}
+    </ul>
+
+    <!-- CTAs -->
+    <div class="flex flex-col sm:flex-row gap-3" style="animation: hero-fade-up 0.5s ease 2.4s both;">
+      <CTAButton href="#contacto" label="Iniciar Proyecto" icon="send-horizontal" variant="primary" />
+      <CTAButton href="#portfolio" label="Ver proyectos"   icon="arrow-up-right"  variant="secondary" />
+    </div>
+
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 animate-bounce opacity-30" style="animation-delay: 2.5s;">
+    <svg class="w-5 h-5 text-[--color-muted]" viewBox="0 0 20 20" fill="none">
+      <path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+
+</section>
+
+<style>
+  .typewriter-cursor {
+    display: inline-block;
+    color: var(--color-cyan);
+    animation: blink 0.8s step-end infinite;
+    margin-left: 2px;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0; }
+  }
+
+  .aurora-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.18;
+    will-change: transform;
+    transform: translateZ(0);
+    contain: layout style;
+  }
+
+  @media (max-width: 767px) {
+    .aurora-blob {
+      filter: blur(50px);
+      opacity: 0.12;
+      animation: none;
+    }
+  }
+
+  .aurora-blob-1 {
+    width: 65vw;
+    height: 65vw;
+    max-width: 780px;
+    max-height: 780px;
+    background: radial-gradient(circle, #2563EB 0%, transparent 70%);
+    top: -20%;
+    left: -10%;
+    animation: aurora-float-1 18s ease-in-out infinite;
+  }
+
+  .aurora-blob-2 {
+    width: 55vw;
+    height: 55vw;
+    max-width: 660px;
+    max-height: 660px;
+    background: radial-gradient(circle, #22D3EE 0%, transparent 70%);
+    top: -10%;
+    right: -15%;
+    animation: aurora-float-2 22s ease-in-out infinite;
+  }
+
+  .aurora-blob-3 {
+    width: 45vw;
+    height: 45vw;
+    max-width: 540px;
+    max-height: 540px;
+    background: radial-gradient(circle, #3B82F6 0%, transparent 70%);
+    bottom: 0%;
+    left: 30%;
+    animation: aurora-float-3 26s ease-in-out infinite;
+  }
+
+  @keyframes aurora-float-1 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33%       { transform: translate(4%, 6%) scale(1.06); }
+    66%       { transform: translate(-3%, -4%) scale(0.96); }
+  }
+
+  @keyframes aurora-float-2 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33%       { transform: translate(-5%, 4%) scale(0.94); }
+    66%       { transform: translate(3%, -6%) scale(1.07); }
+  }
+
+  @keyframes aurora-float-3 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50%       { transform: translate(-4%, -5%) scale(1.05); }
+  }
+
+  @media (max-width: 767px) {
+    .aurora-blob { will-change: auto; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .aurora-blob { animation: none; }
+    .typewriter-cursor { animation: none; }
+  }
+</style>
+
+<script>
+  const regularSpan  = document.getElementById('hero-text')!;
+  const gradientSpan = document.getElementById('hero-gradient')!;
+  const cursor       = document.getElementById('hero-cursor')!;
+
+  const regular  = 'De la idea\nal sistema.\n';
+  const gradient = 'Sin rodeos.';
+  const speed    = 42;
+
+  function toHTML(text: string) {
+    return text.replace(/\n/g, '<br>');
+  }
+
+  let i = 0;
+  function typeRegular() {
+    if (i <= regular.length) {
+      regularSpan.innerHTML = toHTML(regular.slice(0, i));
+      i++;
+      if (i > regular.length) {
+        setTimeout(typeGradient, speed);
+      } else {
+        setTimeout(typeRegular, speed);
+      }
+    }
+  }
+
+  let j = 0;
+  function typeGradient() {
+    if (j <= gradient.length) {
+      gradientSpan.textContent = gradient.slice(0, j);
+      j++;
+      if (j > gradient.length) {
+        setTimeout(() => { cursor.style.display = 'none'; }, 800);
+      } else {
+        setTimeout(typeGradient, speed);
+      }
+    }
+  }
+
+  setTimeout(typeRegular, 350);
+</script>

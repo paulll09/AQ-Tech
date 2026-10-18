@@ -1,0 +1,87 @@
+---
+import Icon from "./Icon.astro";
+import CTAButton from "./ui/CTAButton.astro";
+
+const values = [
+  {
+    icon: "users",
+    title: "Atención Personalizada",
+    description:
+      "Trabajamos con pocos clientes a la vez para dedicarle a tu proyecto el tiempo y el detalle que se merece.",
+  },
+  {
+    icon: "trending-up",
+    title: "Calidad Profesional",
+    description:
+      "Usamos las mismas tecnologías que las grandes empresas del sector, adaptadas a tu presupuesto y tiempos reales.",
+  },
+  {
+    icon: "target",
+    title: "Enfoque en Resultados",
+    description:
+      "No entregamos sitios bonitos sin propósito. Cada proyecto tiene un objetivo de negocio claro desde el día uno.",
+  },
+];
+---
+
+<section id="nosotros" class="py-24 px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+      <!-- Left: Text -->
+      <div class="reveal-left">
+        <span class="text-xs font-bold tracking-widest text-[--color-cyan] uppercase mb-4 block">Nosotros</span>
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-black leading-tight mb-6">
+          Más que un proveedor,<br />
+          <span class="gradient-text">tu socio tecnológico.</span>
+        </h2>
+        <p class="text-[--color-muted] text-lg leading-relaxed mb-8">
+          En AQ Tech somos un estudio de desarrollo de software especializado en crear
+          soluciones digitales para emprendedores y Pymes. A diferencia de las grandes
+          agencias, ofrecemos trato directo y nos aseguramos de entender tu negocio en
+          profundidad — sin intermediarios, sin costos ocultos y con foco total en resultados.
+        </p>
+
+        <CTAButton href="#contacto" label="Hablemos de tu proyecto" icon="send-horizontal" variant="secondary" />
+      </div>
+
+      <!-- Right: Values -->
+      <div class="space-y-4 reveal-right">
+        {values.map((value, i) => (
+          <div
+            class="flex gap-5 p-6 rounded-2xl border transition-all duration-300 group about-card"
+            style={`background: rgba(10,22,40,0.65); backdrop-filter: blur(12px); transition-delay: ${i * 80}ms; border-color: rgba(255,255,255,0.07); border-top-color: rgba(255,255,255,0.11); box-shadow: 0 1px 0 0 rgba(255,255,255,0.05) inset, 0 2px 4px rgba(0,0,0,0.25), 0 8px 16px rgba(0,0,0,0.28), 0 20px 40px rgba(0,0,0,0.22);`}
+          >
+            <div
+              class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 text-[--color-cyan] group-hover:scale-110 transition-transform"
+              style="background: rgba(34,211,238,0.1);"
+            >
+              <Icon name={value.icon} class="w-5 h-5" />
+            </div>
+            <div>
+              <h3 class="font-bold text-white mb-1.5">{value.title}</h3>
+              <p class="text-[--color-muted] text-sm leading-relaxed">{value.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-card {
+    transition: transform 0.25s cubic-bezier(0.22,1,0.36,1), box-shadow 0.25s, border-color 0.25s;
+  }
+  .about-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(37,99,235,0.35) !important;
+    border-top-color: rgba(34,211,238,0.2) !important;
+    box-shadow:
+      0 1px 0 0 rgba(255,255,255,0.07) inset,
+      0 4px 8px   rgba(0,0,0,0.28),
+      0 12px 24px rgba(0,0,0,0.32),
+      0 32px 56px rgba(0,0,0,0.22),
+      0 0 32px    rgba(37,99,235,0.10) !important;
+  }
+</style>

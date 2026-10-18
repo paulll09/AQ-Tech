@@ -1,0 +1,105 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "AQ Tech — Desarrollo de Software a Medida",
+  description = "Estudio de desarrollo de software especializado en soluciones digitales para emprendedores y Pymes. Trato directo, sin intermediarios, sin costos ocultos.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Orbitron:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+
+    <style>
+      #page-loader {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        background: #020B18;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        transition: opacity 0.3s ease;
+      }
+
+      #page-loader.hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      #loader-logo {
+        width: 120px;
+        height: auto;
+      }
+
+      #loader-bar-track {
+        width: 160px;
+        height: 2px;
+        background: rgba(26, 52, 97, 0.6);
+        border-radius: 9999px;
+        overflow: hidden;
+      }
+
+      #loader-bar-fill {
+        height: 100%;
+        width: 0%;
+        border-radius: 9999px;
+        background: linear-gradient(90deg, #2563EB, #22D3EE);
+        animation: loader-progress 2.5s ease forwards;
+      }
+
+      @keyframes loader-progress {
+        from { width: 0%; }
+        to   { width: 100%; }
+      }
+    </style>
+
+    <script>
+      (function () {
+        function hideLoader() {
+          var loader = document.getElementById("page-loader");
+          if (!loader) return;
+          loader.classList.add("hidden");
+          setTimeout(function () {
+            if (loader.parentNode) loader.parentNode.removeChild(loader);
+          }, 350);
+        }
+
+        window.addEventListener("load", function () {
+          setTimeout(hideLoader, 300);
+        });
+
+        // Fallback: force-hide after 3s
+        setTimeout(hideLoader, 3000);
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="page-loader" aria-hidden="true">
+      <img id="loader-logo" src="/logo.svg" alt="AQ Tech" />
+      <div id="loader-bar-track">
+        <div id="loader-bar-fill"></div>
+      </div>
+    </div>
+    <slot />
+  </body>
+</html>

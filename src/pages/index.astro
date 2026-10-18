@@ -1,0 +1,90 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Navbar } from "../components/Navbar";
+import Hero from "../components/Hero.astro";
+import Marquee from "../components/Marquee.astro";
+import Services from "../components/Services.astro";
+import Portfolio from "../components/Portfolio.astro";
+import Process from "../components/Process.astro";
+import About from "../components/About.astro";
+import WhyUs from "../components/WhyUs.astro";
+import FAQ from "../components/FAQ.astro";
+import Stats from "../components/Stats.astro";
+import Contact from "../components/Contact.astro";
+import PreFooterCTA from "../components/PreFooterCTA.astro";
+import Footer from "../components/Footer.astro";
+import Divider from "../components/Divider.astro";
+---
+
+<Layout>
+  <Navbar client:only="react" />
+  <main>
+    <Hero />
+    <Marquee />
+    <Divider />
+    <Services />
+    <Divider />
+    <Portfolio />
+    <Divider />
+    <Process />
+    <Divider />
+    <About />
+    <Divider />
+    <WhyUs />
+    <Divider />
+    <Stats />
+    <Divider />
+    <Contact />
+    <Divider />
+    <PreFooterCTA />
+    <Divider />
+    <FAQ />
+  </main>
+  <Footer />
+</Layout>
+
+<script>
+  const REVEAL_CLASSES = [".reveal", ".reveal-left", ".reveal-right", ".reveal-scale", ".reveal-pop"];
+  const els = document.querySelectorAll<HTMLElement>(REVEAL_CLASSES.join(","));
+  const isMobile = window.innerWidth < 768;
+
+  // Stagger: más espaciado en mobile para no saturar la GPU
+  const STAGGER = isMobile ? 120 : 90;
+
+  const seen = new Set<Element>();
+  els.forEach((el) => {
+    const parent = el.parentElement;
+    if (!parent || seen.has(parent)) return;
+    const siblings = Array.from(
+      parent.querySelectorAll<HTMLElement>(REVEAL_CLASSES.join(","))
+    ).filter((s) => s.parentElement === parent && !s.style.transitionDelay);
+    if (siblings.length > 1) {
+      siblings.forEach((sib, i) => {
+        sib.style.transitionDelay = `${i * STAGGER}ms`;
+      });
+      seen.add(parent);
+    }
+  });
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target as HTMLElement;
+
+        // Activa will-change solo durante la animación → libera la capa GPU al terminar
+        el.style.willChange = "opacity, transform";
+        el.classList.add("visible");
+
+        el.addEventListener("transitionend", () => {
+          el.style.willChange = "auto";
+        }, { once: true });
+
+        observer.unobserve(el);
+      });
+    },
+    { threshold: 0.08, rootMargin: "0px 0px -32px 0px" }
+  );
+
+  els.forEach((el) => observer.observe(el));
+</script>

@@ -1,0 +1,136 @@
+---
+const projects = [
+  {
+    category: "Sistema Gastronómico",
+    name: "Bar Bulgaria",
+    url: "https://www.bulgariabar.com",
+    description:
+      "Menú digital interactivo con carrito, pedidos vía WhatsApp, control horario automático, ubicación GPS y panel de administración en tiempo real.",
+    features: [
+      "Carta digital interactiva",
+      "Pedidos por WhatsApp",
+      "Panel admin en tiempo real",
+      "Control horario automático",
+      "Compartir ubicación GPS",
+    ],
+    accent: "#22D3EE",
+  },
+  {
+    category: "Sistema Gastronómico",
+    name: "Burgers Boss",
+    url: "https://burgersboss.com.ar",
+    description:
+      "Menú digital y panel de administración para hamburguesería. Gestión de pedidos en tiempo real, análisis de ventas y cierre de caja diario.",
+    features: [
+      "Menú digital con carrito",
+      "Análisis de ventas",
+      "Control de gastos",
+      "Cierre de caja diario",
+      "Pedidos por WhatsApp",
+    ],
+    accent: "#F97316",
+  },
+  {
+    category: "Sistema de Reservas",
+    name: "Club del Bosque Pádel",
+    url: "https://clubdelbosquepadel.com",
+    description:
+      "Sistema integral de reservas de canchas con pagos online vía Mercado Pago, panel administrativo completo y gestión de socios.",
+    features: [
+      "Reservas online 24/7",
+      "Pagos con Mercado Pago",
+      "Panel administrativo",
+      "Calendario en tiempo real",
+      "Gestión de socios",
+    ],
+    accent: "#22C55E",
+  },
+];
+---
+
+<section id="portfolio" class="py-24 px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+    <!-- Header -->
+    <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+      <span class="text-xs font-bold tracking-widest text-[--color-cyan] uppercase mb-4 block">Portafolio</span>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-black leading-tight mb-4">
+        Proyectos reales,<br />
+        <span class="gradient-text">en producción.</span>
+      </h2>
+      <p class="text-[--color-muted] text-lg leading-relaxed">
+        No vendemos tecnología. Resolvemos problemas concretos de negocios reales.
+      </p>
+    </div>
+
+    <!-- Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {projects.map((project, i) => (
+        <div
+          class={`${i === 0 ? "reveal-left" : i === 1 ? "reveal" : "reveal-right"} group relative rounded-2xl overflow-hidden border transition-all duration-300 flex flex-col portfolio-card`}
+          style={`background: rgba(10,22,40,0.7); transition-delay: ${i * 120}ms; border-color: rgba(255,255,255,0.07); border-top-color: rgba(255,255,255,0.12); box-shadow: 0 1px 0 0 rgba(255,255,255,0.05) inset, 0 2px 4px rgba(0,0,0,0.25), 0 8px 16px rgba(0,0,0,0.30), 0 24px 48px rgba(0,0,0,0.25), 0 0 0 1px rgba(0,0,0,0.2);`}
+        >
+          <!-- Hover styles via global CSS below -->
+          <!-- Top accent bar -->
+          <div class="h-1 w-full" style={`background: ${project.accent};`}></div>
+
+          <div class="p-8 flex flex-col flex-1">
+            <!-- Badge -->
+            <span
+              class="inline-block text-xs font-bold px-3 py-1 rounded-full mb-4 w-fit"
+              style={`background: ${project.accent}18; color: ${project.accent};`}
+            >
+              {project.category}
+            </span>
+
+            <h3 class="text-2xl font-black text-white mb-3">{project.name}</h3>
+            <p class="text-[--color-muted] text-sm leading-relaxed mb-6">{project.description}</p>
+
+            <!-- Features -->
+            <ul class="space-y-2 mb-8 flex-1">
+              {project.features.map((feature) => (
+                <li class="flex items-center gap-2 text-sm text-[--color-muted]">
+                  <svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 16 16" fill="none" style={`color: ${project.accent};`}>
+                    <path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  {feature}
+                </li>
+              ))}
+            </ul>
+
+            <!-- Link -->
+            <a
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 text-sm font-semibold transition-colors group-hover:text-white"
+              style={`color: ${project.accent};`}
+              aria-label={`Ver proyecto ${project.name} (abre en nueva pestaña)`}
+            >
+              Ver proyecto
+              <svg class="w-4 h-4 translate-x-0 group-hover:translate-x-1 transition-transform" viewBox="0 0 16 16" fill="none">
+                <path d="M7 3h6v6M13 3L7 9M4 5H3a1 1 0 00-1 1v7a1 1 0 001 1h7a1 1 0 001-1v-1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .portfolio-card {
+    transition: transform 0.25s cubic-bezier(0.22,1,0.36,1), box-shadow 0.25s cubic-bezier(0.22,1,0.36,1), border-color 0.25s;
+  }
+  .portfolio-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(37, 99, 235, 0.35) !important;
+    border-top-color: rgba(34, 211, 238, 0.25) !important;
+    box-shadow:
+      0 1px 0 0 rgba(255,255,255,0.07) inset,
+      0 4px 8px   rgba(0,0,0,0.30),
+      0 16px 32px rgba(0,0,0,0.35),
+      0 40px 64px rgba(0,0,0,0.25),
+      0 0 40px    rgba(37,99,235,0.12) !important;
+  }
+</style>

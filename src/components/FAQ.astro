@@ -1,0 +1,199 @@
+---
+const faqs = [
+  {
+    q: "¿Cuánto cuesta hacer un proyecto?",
+    a: "Depende de lo que necesitás. No tenemos precios fijos porque cada proyecto es distinto. Lo que sí te garantizamos es que el precio que acordamos al principio es el que pagás al final — sin sorpresas ni costos que aparecen después. Escribinos y te damos un presupuesto sin compromiso.",
+  },
+  {
+    q: "¿Cuánto tiempo tarda en estar listo?",
+    a: "Un sitio web sencillo puede estar en dos o tres semanas. Una plataforma más compleja puede llevar dos o tres meses. Antes de arrancar te damos una fecha real y la cumplimos. No somos de los que prometen tiempos imposibles para después pedir extensiones.",
+  },
+  {
+    q: "¿Necesito saber de tecnología para trabajar con ustedes?",
+    a: "Para nada. Te explicamos todo en términos simples y tomamos las decisiones técnicas por vos. Tu trabajo es contarnos qué necesita tu negocio — el nuestro es traducirlo en una solución que funcione.",
+  },
+  {
+    q: "¿Qué pasa si quiero hacer cambios en el medio del proyecto?",
+    a: "Es algo que pasa y está bien. Hablamos, evaluamos el impacto en el tiempo y el costo, y si acordamos seguir, ajustamos el plan. Nunca vas a recibir un 'no' sin explicación — siempre te decimos por qué y te proponemos alternativas.",
+  },
+  {
+    q: "¿Puedo pedirles cambios después de que entreguen el proyecto?",
+    a: "Sí. Una vez entregado el proyecto, te ofrecemos un período de ajustes para corregir cualquier detalle. Si después de eso necesitás agregar funcionalidades o hacer cambios más grandes, lo charlamos y lo presupuestamos aparte.",
+  },
+  {
+    q: "¿Con quién voy a hablar durante el proyecto?",
+    a: "Directamente con nosotros — los que desarrollamos. No hay un intermediario que te pase los mensajes. Eso hace que todo sea más rápido, más claro y que no se pierda nada en el camino.",
+  },
+  {
+    q: "¿Trabajan con empresas o también con emprendedores que están arrancando?",
+    a: "Con los dos. Trabajamos tanto con negocios que ya están funcionando y quieren crecer digitalmente, como con emprendedores que están dando sus primeros pasos. El tamaño del negocio no importa — lo que importa es tener claro qué querés lograr.",
+  },
+];
+---
+
+<section id="faq" class="py-24 px-6 lg:px-8">
+  <div class="max-w-3xl mx-auto">
+
+    <div class="text-center mb-16 reveal">
+      <span class="text-xs font-bold tracking-widest text-[--color-cyan] uppercase mb-4 block">Preguntas frecuentes</span>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-black leading-tight mb-4">
+        Todo lo que querías<br />
+        <span class="gradient-text">saber y no te animabas.</span>
+      </h2>
+      <p class="text-[--color-muted] text-lg">Si tu duda no está acá, escribinos — respondemos rápido.</p>
+    </div>
+
+    <div class="faq-list">
+      {faqs.map((item, i) => (
+        <div class="faq-item reveal" style={`transition-delay: ${i * 40}ms`}>
+
+          <button class="faq-btn" aria-expanded="false">
+            <span class="faq-q">{item.q}</span>
+            <div class="faq-icon" aria-hidden="true">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round">
+                <path d="M3 8h10"/>
+                <path class="icon-v" d="M8 3v10"/>
+              </svg>
+            </div>
+          </button>
+
+          <!-- Wrapper animado con grid-template-rows -->
+          <div class="faq-body" role="region" aria-label={item.q}>
+            <div class="faq-body-inner">
+              <p>{item.a}</p>
+            </div>
+          </div>
+
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .faq-list {
+    border: 1px solid var(--color-border);
+    border-radius: 1.25rem;
+    overflow: hidden;
+  }
+
+  /* ── Item ── */
+  .faq-item {
+    border-bottom: 1px solid var(--color-border);
+    background: var(--color-surface);
+    transition: background 0.2s;
+  }
+
+  .faq-item:last-child { border-bottom: none; }
+  .faq-item.is-open    { background: var(--color-surface-2); }
+
+  /* ── Button ── */
+  .faq-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1.5rem 1.75rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+  }
+
+  .faq-q {
+    font-size: 0.975rem;
+    font-weight: 600;
+    color: var(--color-text);
+    transition: color 0.2s;
+    line-height: 1.4;
+  }
+
+  .faq-btn:hover .faq-q,
+  .faq-item.is-open .faq-q { color: #fff; }
+
+  /* ── Icon +/× ── */
+  .faq-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    border: 1px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--color-cyan);
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .faq-icon svg { width: 10px; height: 10px; }
+
+  .faq-item.is-open .faq-icon {
+    background: rgba(34, 211, 238, 0.1);
+    border-color: rgba(34, 211, 238, 0.3);
+  }
+
+  .icon-v {
+    transform-origin: center;
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+                opacity  0.3s ease;
+  }
+
+  .faq-item.is-open .icon-v {
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+
+  /* ── Animated body (grid trick) ── */
+  .faq-body {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .faq-item.is-open .faq-body {
+    grid-template-rows: 1fr;
+  }
+
+  .faq-body-inner {
+    overflow: hidden;
+    /* padding animado junto al grid */
+    padding: 0 1.75rem;
+    transition: padding-bottom 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .faq-item.is-open .faq-body-inner {
+    padding-bottom: 1.5rem;
+  }
+
+  .faq-body-inner p {
+    font-size: 0.9rem;
+    color: var(--color-muted);
+    line-height: 1.8;
+    max-width: 60ch;
+  }
+</style>
+
+<script>
+  document.querySelectorAll(".faq-item").forEach(function (item) {
+    var btn = item.querySelector(".faq-btn");
+    if (!btn) return;
+
+    btn.addEventListener("click", function () {
+      var isOpen = item.classList.contains("is-open");
+
+      /* Cierra todos los demás */
+      document.querySelectorAll(".faq-item.is-open").forEach(function (open) {
+        open.classList.remove("is-open");
+        open.querySelector(".faq-btn")?.setAttribute("aria-expanded", "false");
+      });
+
+      /* Abre o cierra el actual */
+      if (!isOpen) {
+        item.classList.add("is-open");
+        btn.setAttribute("aria-expanded", "true");
+      }
+    });
+  });
+</script>

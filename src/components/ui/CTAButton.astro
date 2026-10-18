@@ -1,0 +1,43 @@
+---
+import Icon from "../Icon.astro";
+
+interface Props {
+  href: string;
+  label: string;
+  icon?: string;
+  variant?: "primary" | "secondary";
+  target?: "_blank";
+  rel?: string;
+  class?: string;
+}
+
+const {
+  href,
+  label,
+  icon = "arrow-up-right",
+  variant = "primary",
+  target,
+  rel,
+  class: className = "",
+} = Astro.props;
+---
+
+<a
+  href={href}
+  target={target}
+  rel={rel}
+  class={`cta-btn ${variant === "primary" ? "cta-primary" : "cta-secondary"} ${className}`}
+>
+  <span class="cta-text">{label}</span>
+
+  <span class="cta-icon-wrap" aria-hidden="true">
+    <span class="icon-out">
+      <Icon name={icon} class="w-4 h-4" />
+    </span>
+    <span class="icon-in">
+      <Icon name={icon} class="w-4 h-4" />
+    </span>
+  </span>
+
+  <span class="cta-shine" aria-hidden="true"></span>
+</a>
