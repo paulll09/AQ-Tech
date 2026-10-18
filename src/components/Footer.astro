@@ -6,15 +6,22 @@ const services = [
   "Tiendas Online (E-Commerce)",
   "Sistemas de Gestión a Medida",
   "Integraciones & Automatizaciones",
+  "Asistentes de atención al cliente con IA",
+];
+
+const legal = [
+  { label: "Política de privacidad", href: "/politica-de-privacidad" },
+  { label: "Términos y condiciones", href: "/terminos-y-condiciones" },
+  { label: "Eliminación de datos", href: "/eliminacion-de-datos" },
 ];
 
 const nav = [
-  { label: "Inicio", href: "#" },
-  { label: "Servicios", href: "#servicios" },
-  { label: "Nosotros", href: "#nosotros" },
-  { label: "Proceso", href: "#proceso" },
-  { label: "Portafolio", href: "#portfolio" },
-  { label: "Contacto", href: "#contacto" },
+  { label: "Inicio", href: "/" },
+  { label: "Servicios", href: "/#servicios" },
+  { label: "Nosotros", href: "/#nosotros" },
+  { label: "Proceso", href: "/#proceso" },
+  { label: "Portafolio", href: "/#portfolio" },
+  { label: "Contacto", href: "/#contacto" },
 ];
 ---
 
@@ -24,7 +31,7 @@ const nav = [
 
       <!-- Brand -->
       <div class="lg:col-span-1">
-        <a href="#" class="inline-flex mb-5">
+        <a href="/" class="inline-flex mb-5">
           <img src="/logo.svg" alt="AQ Tech" class="h-10 w-auto object-contain" />
         </a>
         <p class="text-sm text-[--color-muted] leading-relaxed mb-6">
@@ -65,7 +72,7 @@ const nav = [
         <ul class="space-y-3">
           {services.map((s) => (
             <li>
-              <a href="#servicios" class="text-sm text-[--color-muted] hover:text-white transition-colors">
+              <a href="/#servicios" class="text-sm text-[--color-muted] hover:text-white transition-colors">
                 {s}
               </a>
             </li>
@@ -112,7 +119,19 @@ const nav = [
     </div>
 
     <!-- Bottom bar -->
-    <div class="mt-12 pt-8 border-t border-[--color-border] flex flex-col sm:flex-row items-center justify-between gap-4">
+    <nav aria-label="Legal" class="mt-12 pt-8 border-t border-[--color-border]">
+      <ul class="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-x-8 gap-y-3">
+        {legal.map((link) => (
+          <li>
+            <a href={link.href} class="text-sm text-[--color-muted] hover:text-white transition-colors">
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <div class="mt-8 pt-8 border-t border-[--color-border] flex flex-col sm:flex-row items-center justify-between gap-4">
       <p class="text-xs text-[--color-muted-2]">
         © {year} AQ Tech. Todos los derechos reservados.
       </p>

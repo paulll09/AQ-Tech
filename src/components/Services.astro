@@ -22,6 +22,11 @@ const services = [
     description: "Conectamos las herramientas que ya usás para que trabajen juntas solas. Menos trabajo manual, más tiempo para vos.",
     icon: "zap",
   },
+  {
+    title: "Asistentes de atención al cliente con IA",
+    description: "Un asistente que responde al instante y a cualquier hora las consultas que te llegan por WhatsApp, Instagram y Messenger. Toma los datos importantes (qué busca tu cliente, qué turno necesita), ordena todas las consultas en un panel y le pasa la conversación a alguien de tu equipo con un resumen. Solo responde a quien te escribe primero: no manda mensajes masivos ni spam. No reemplaza a tu equipo, lo ayuda a no perder ventas.",
+    icon: "message-circle",
+  },
 ];
 ---
 
@@ -66,6 +71,9 @@ const services = [
 
   @media (min-width: 768px) {
     .services-grid { grid-template-columns: repeat(2, 1fr); }
+
+    /* Odd card count: the last card spans the full row instead of sitting alone */
+    .service-card:last-child:nth-child(odd) { grid-column: 1 / -1; }
   }
 
   /* ── Card elevada ── */

@@ -5,10 +5,10 @@ import { useScroll } from "./ui/use-scroll";
 import { cn } from "../lib/utils";
 
 const links = [
-  { label: "Servicios", href: "#servicios" },
-  { label: "Portafolio", href: "#portfolio" },
-  { label: "Nosotros", href: "#nosotros" },
-  { label: "Contacto", href: "#contacto" },
+  { label: "Servicios", href: "/#servicios" },
+  { label: "Portafolio", href: "/#portfolio" },
+  { label: "Nosotros", href: "/#nosotros" },
+  { label: "Contacto", href: "/#contacto" },
 ];
 
 function AQTechLogo() {
@@ -82,7 +82,7 @@ export function Navbar() {
 
         {/* Desktop CTA */}
         <div className="hidden md:flex items-center">
-          <a href="#contacto" className="cta-btn cta-primary" style={{ fontSize: "0.875rem", padding: "0.5rem 1.25rem" }}>
+          <a href="/#contacto" className="cta-btn cta-primary" style={{ fontSize: "0.875rem", padding: "0.5rem 1.25rem" }}>
             <span className="cta-text">Iniciar Proyecto</span>
             <span className="cta-icon-wrap" aria-hidden="true">
               <span className="icon-out">
@@ -141,7 +141,7 @@ export function Navbar() {
 
           <div className="flex flex-col gap-3 pb-8">
             <a
-              href="#contacto"
+              href="/#contacto"
               onClick={closeMenu}
               className="cta-btn cta-primary w-full justify-center"
               style={{ fontSize: "1rem" }}
