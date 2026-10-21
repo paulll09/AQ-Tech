@@ -1,0 +1,82 @@
+---
+import LegalLayout from "../layouts/LegalLayout.astro";
+
+const providers = [
+  {
+    name: "Meta Platforms (WhatsApp, Instagram y Messenger)",
+    purpose: "Recepción y envío de mensajes",
+    location: "EE. UU. / global",
+  },
+  {
+    name: "Anthropic (Claude)",
+    purpose: "Procesamiento de lenguaje del asistente",
+    location: "EE. UU.",
+  },
+  {
+    name: "Telegram",
+    purpose: "Avisos internos al personal del comercio",
+    location: "Global",
+  },
+  {
+    name: "Hostinger",
+    purpose: "Alojamiento del sitio y correo electrónico",
+    location: "Brasil (copias de seguridad en EE. UU.)",
+  },
+  {
+    name: "Web3Forms",
+    purpose: "Formulario de contacto del sitio",
+    location: "India; infraestructura en EE. UU. y otras regiones (AWS, Hetzner, Cloudflare)",
+  },
+  {
+    name: "Cloudflare",
+    purpose: "Red de distribución y seguridad del sitio",
+    location: "Global",
+  },
+  {
+    name: "Google Fonts",
+    purpose: "Tipografías del sitio",
+    location: "Global",
+  },
+];
+---
+
+<LegalLayout
+  title="Proveedores que procesan datos"
+  description="Lista actualizada de los proveedores que procesan datos personales en nombre de AQ Tech, con su finalidad y la ubicación del procesamiento."
+  updated="21 de octubre de 2026"
+>
+  <p>
+    Para prestar nuestros servicios trabajamos con proveedores que tratan datos personales en nombre de AQ Tech, bajo
+    compromisos de confidencialidad y seguridad. Cada uno trata solo los datos necesarios para la finalidad indicada.
+  </p>
+
+  <div class="legal-table-wrap">
+    <table class="legal-table">
+      <thead>
+        <tr>
+          <th scope="col">Proveedor</th>
+          <th scope="col">Finalidad</th>
+          <th scope="col">Ubicación del procesamiento</th>
+        </tr>
+      </thead>
+      <tbody>
+        {providers.map((p) => (
+          <tr>
+            <td>{p.name}</td>
+            <td>{p.purpose}</td>
+            <td>{p.location}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="legal-note">
+    <p>Esta lista puede cambiar; los cambios se publican en esta página.</p>
+  </div>
+
+  <p>
+    Para más información sobre cómo tratamos tus datos y cuáles son tus derechos, leé nuestra
+    <a href="/politica-de-privacidad">política de privacidad</a>.
+  </p>
+</LegalLayout>

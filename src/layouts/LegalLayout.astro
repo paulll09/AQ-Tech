@@ -113,4 +113,38 @@ const { title, description, updated } = Astro.props;
   .legal-prose .legal-note p:last-child {
     margin-bottom: 0;
   }
+
+  .legal-prose .legal-table-wrap {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+    border: 1px solid var(--color-border);
+    border-radius: 0.75rem;
+  }
+
+  .legal-prose .legal-table {
+    width: 100%;
+    min-width: 36rem;
+    border-collapse: collapse;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    overflow-wrap: normal;
+  }
+
+  .legal-prose .legal-table th,
+  .legal-prose .legal-table td {
+    text-align: left;
+    vertical-align: top;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .legal-prose .legal-table th {
+    color: var(--color-text);
+    font-weight: 600;
+    background: var(--color-surface);
+  }
+
+  .legal-prose .legal-table tbody tr:last-child td {
+    border-bottom: 0;
+  }
 </style>
